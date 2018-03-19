@@ -35,7 +35,8 @@ class argHandler(dict):
         self.define('saveVideo', False, 'Records video from input video or camera')
         self.define('pbLoad', '', 'path to .pb protobuf file (metaLoad must also be specified)')
         self.define('metaLoad', '', 'path to .meta file generated during --savepb that corresponds to .pb file')
-
+        self.define('test','./testset/','path to testset which used to compute mAP of current model')
+        self.define('iftest',False,'if compute mAP after every train step')
     def define(self, argName, default, description):
         self[argName] = default
         self._descriptions[argName] = description

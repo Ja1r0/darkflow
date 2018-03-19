@@ -17,6 +17,7 @@ def build_train_op(self):
     optimizer = self._TRAINER[self.FLAGS.trainer](self.FLAGS.lr)
     gradients = optimizer.compute_gradients(self.framework.loss)
     self.train_op = optimizer.apply_gradients(gradients)
+    print('testing yang')
 
 def load_from_ckpt(self):
     if self.FLAGS.load < 0: # load lastest ckpt

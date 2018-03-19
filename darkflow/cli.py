@@ -1,7 +1,8 @@
 from .defaults import argHandler #Import the default arguments
 import os
 from .net.build import TFNet
-
+def test():
+    print('testing yang3')
 def cliHandler(args):
     FLAGS = argHandler()
     FLAGS.setDefaults()
@@ -13,7 +14,8 @@ def cliHandler(args):
             this = os.path.abspath(os.path.join(os.path.curdir, d))
             if not os.path.exists(this): os.makedirs(this)
     
-    requiredDirectories = [FLAGS.imgdir, FLAGS.binary, FLAGS.backup, os.path.join(FLAGS.imgdir,'out')]
+    requiredDirectories = [FLAGS.imgdir, FLAGS.binary, FLAGS.backup, os.path.join(FLAGS.imgdir,'out'),
+                           os.path.join(FLAGS.test,'xmls'),os.path.join(FLAGS.test,'imgs')]
     if FLAGS.summary:
         requiredDirectories.append(FLAGS.summary)
 
